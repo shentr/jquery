@@ -12,7 +12,7 @@
  *
  * Date: @DATE
  */
-( function( global, factory ) {
+( function( global, factory ) {					///wrapper.js
 
 	"use strict";
 
@@ -29,12 +29,12 @@
 			factory( global, true ) :
 			function( w ) {
 				if ( !w.document ) {
-					throw new Error( "jQuery requires a window with a document" );
+					throw new Error( "jQuery requires a window with a document" );		///webstorm enter here
 				}
 				return factory( w );
 			};
 	} else {
-		factory( global );
+		factory( global );											///chrome enter here
 	}
 
 // Pass this if window is not defined yet

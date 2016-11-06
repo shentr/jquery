@@ -3,7 +3,7 @@ define( [
 ], function( document ) {
 	"use strict";
 
-	function DOMEval( code, doc ) {
+	function DOMEval( code, doc ) {						///DOMEval.js
 		doc = doc || document;
 
 		var script = doc.createElement( "script" );

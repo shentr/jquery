@@ -11,12 +11,13 @@
  *
  * Date: 2016-09-22T22:30Z
  */
-( function( global, factory ) {									///wrapper.js
+( function( global, factory ) {
 
 	"use strict";
+
 	if ( typeof module === "object" && typeof module.exports === "object" ) {
 
-		//For CommonJS and CommonJS-like environments where a proper `window`
+		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
 		// For environments that do not have a `window` with a `document`
 		// (such as Node.js), expose a factory as module.exports.
@@ -44,7 +45,7 @@
 // enough that all such attempts are guarded in a try block.
 "use strict";
 
-var arr = [];								///
+var arr = [];
 
 var document = window.document;
 
