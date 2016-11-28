@@ -1,4 +1,4 @@
-define( [
+define( [												/// require.js
 	"../var/document"
 ], function( document ) {
 	"use strict";

@@ -27,7 +27,7 @@ module.exports = function( grunt ) {
 		grunt.option( "filename", "jquery.js" );
 	}
 
-	grunt.initConfig( {
+	grunt.initConfig( {  			/// 任务配置
 		pkg: grunt.file.readJSON( "package.json" ),
 		dst: readOptionalJSON( "dist/.destination.json" ),
 		"compare_size": {
@@ -196,7 +196,7 @@ module.exports = function( grunt ) {
 	// Integrate jQuery specific tasks
 	grunt.loadTasks( "build/tasks" );
 
-	grunt.registerTask( "print_old_node_message", function() {
+	grunt.registerTask( "print_old_node_message", function() {	/// 测试合并任务
 		var task = [].slice.call( arguments ).join( ":" );
 		grunt.log.writeln( "Old Node.js detected, running the task \"" + task + "\" skipped..." );
 	} );

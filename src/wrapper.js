@@ -12,6 +12,7 @@
  *
  * Date: @DATE
  */
+
 ( function( global, factory ) {					///wrapper.js
 
 	"use strict";
@@ -51,3 +52,4 @@
 
 return jQuery;
 } );
+

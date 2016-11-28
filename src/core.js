@@ -24,7 +24,7 @@ define( [
 "use strict";
 
 var
-	version = "@VERSION",
+	version = "@VERSION",										/// core.js   *jQuery*
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -71,15 +71,15 @@ jQuery.fn = jQuery.prototype = {
 		}
 
 		// Return just the one element from the set
-		return num < 0 ? this[ num + this.length ] : this[ num ];
+		return num < 0 ? this[ num + this.length ] : this[ num ];				///-i 代表倒数第i个
 	},
 
 	// Take an array of elements and push it onto the stack
 	// (returning the new matched element set)
-	pushStack: function( elems ) {
+	pushStack: function( elems ) {                                 ///elems is array
 
 		// Build a new jQuery matched element set
-		var ret = jQuery.merge( this.constructor(), elems );
+		var ret = jQuery.merge( this.constructor(), elems );                 /// this.constructor 没变，返回赋值才能改变this
 
 		// Add the old object onto the stack (as a reference)
 		ret.prevObject = this;
@@ -183,7 +183,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 					}
 
 					// Never move original objects, clone them
-					target[ name ] = jQuery.extend( deep, clone, copy );
+					target[ name ] = jQuery.extend( deep, clone, copy );					/// 递归
 
 				// Don't bring in undefined values
 				} else if ( copy !== undefined ) {
@@ -197,7 +197,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	return target;
 };
 
-jQuery.extend( {
+jQuery.extend( {												/// jQuery 这个‘函数’的扩展
 
 	// Unique for each copy of jQuery on the page
 	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
@@ -347,7 +347,7 @@ jQuery.extend( {
 
 	// Support: Android <=4.0 only, PhantomJS 1 only
 	// push.apply(_, arraylike) throws on ancient WebKit
-	merge: function( first, second ) {
+	merge: function( first, second ) {  					///first && second is array
 		var len = +second.length,
 			j = 0,
 			i = first.length;
@@ -461,13 +461,13 @@ function( i, name ) {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 } );
 
-function isArrayLike( obj ) {
+function isArrayLike( obj ) {								/// http://www.oschina.net/question/579940_146810
 
 	// Support: real iOS 8.2 only (not reproducible in simulator)
 	// `in` check used to prevent JIT error (gh-2145)
 	// hasOwn isn't used here due to false negatives
 	// regarding Nodelist length in IE
-	var length = !!obj && "length" in obj && obj.length,
+	var length = !!obj && "length" in obj && obj.length,         ///
 		type = jQuery.type( obj );
 
 	if ( type === "function" || jQuery.isWindow( obj ) ) {

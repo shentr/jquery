@@ -13,7 +13,7 @@ var requirejs, require, define;
     var req, s, head, baseElement, dataMain, src,
         interactiveScript, currentlyAddingScript, mainScript, subPath,
         version = '2.1.22',
-        commentRegExp = /(\/\*([\s\S]*?)\*\/|([^:]|^)\/\/(.*)$)/mg,
+        commentRegExp = /(\/\*([\s\S]*?)\*\/|([^:]|^)\/\/(.*)$)/mg,					/// 注释匹配
         cjsRequireRegExp = /[^.]\s*require\s*\(\s*["']([^'"\s]+)["']\s*\)/g,
         jsSuffixRegExp = /\.js$/,
         currDirRegExp = /^\.\//,
@@ -2066,10 +2066,10 @@ var requirejs, require, define;
             //Remove comments from the callback string,
             //look for require calls, and pull them into the dependencies,
             //but only if there are function args.
-            if (callback.length) {
+            if (callback.length) {										///func.length  参数个数
                 callback
                     .toString()
-                    .replace(commentRegExp, '')
+                    .replace(commentRegExp, '')								///排除注释干扰
                     .replace(cjsRequireRegExp, function (match, dep) {
                         deps.push(dep);
                     });
