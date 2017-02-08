@@ -197,7 +197,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	return target;
 };
 
-jQuery.extend( {												/// jQuery 这个‘函数’的扩展
+jQuery.extend( {												/// 唯一的参数将扩展jQuery这个‘函数’的命名空间
 
 	// Unique for each copy of jQuery on the page
 	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),

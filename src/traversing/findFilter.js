@@ -59,7 +59,7 @@ jQuery.filter = function( expr, elems, not ) {
 	} ) );
 };
 
-jQuery.fn.extend( {
+jQuery.fn.extend( {														/// findFilter.js
 	find: function( selector ) {
 		var i, ret,
 			len = this.length,

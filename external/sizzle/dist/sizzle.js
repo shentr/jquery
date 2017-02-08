@@ -8,7 +8,7 @@
  *
  * Date: 2016-08-08
  */
-(function( window ) {
+(function( window ) {													///sizzle.js
 
 var i,
 	support,
@@ -636,7 +636,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				return elem.getAttribute("id") === attrId;
 			};
 		};
-		Expr.find["ID"] = function( id, context ) {
+		Expr.find["ID"] = function( id, context ) {						///find［＂＂］()　：元素选择器
 			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
 				var elem = context.getElementById( id );
 				return elem ? [ elem ] : [];
@@ -1123,8 +1123,8 @@ Expr = Sizzle.selectors = {
 
 	find: {},
 
-	relative: {
-		">": { dir: "parentNode", first: true },
+	relative: {															///关系选择器
+		">": { dir: "parentNode", first: true },						///first 直接相邻的
 		" ": { dir: "parentNode" },
 		"+": { dir: "previousSibling", first: true },
 		"~": { dir: "previousSibling" }
@@ -1206,6 +1206,7 @@ Expr = Sizzle.selectors = {
 	},
 
 	filter: {
+										///id 分开写了  Expr.filter["ID"]
 
 		"TAG": function( nodeNameSelector ) {
 			var nodeName = nodeNameSelector.replace( runescape, funescape ).toLowerCase();
@@ -1648,7 +1649,7 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 		if ( !matched || (match = rcomma.exec( soFar )) ) {
 			if ( match ) {
 				// Don't consume trailing commas as valid
-				soFar = soFar.slice( match[0].length ) || soFar;
+				soFar = soFar.slice( match[0].length ) || soFar;				///去除前导','
 			}
 			groups.push( (tokens = []) );
 		}

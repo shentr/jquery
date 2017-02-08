@@ -12,7 +12,9 @@ var
 	// Map over the $ in case of overwrite
 	_$ = window.$;
 
-jQuery.noConflict = function( deep ) {
+jQuery.noConflict = function( deep ) {					///global.js   ///可用闭包实现局部变量仍使用$
+
+
 	if ( window.$ === jQuery ) {
 		window.$ = _$;
 	}
